@@ -13,6 +13,11 @@ main() {
         exit 0
     fi
 
+    if [ ! -f .env.example ]; then
+        echo ".env.example not found, aborting."
+        exit 1
+    fi
+
     cp .env.example .env
 
     local cookie
@@ -22,6 +27,8 @@ main() {
     rm -f .env.bak
 
     echo ".env created with a fresh cookie."
+
+    exit 0
 }
 
 main "$@"
