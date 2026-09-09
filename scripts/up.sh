@@ -10,7 +10,7 @@ generate_cookie() {
 main() {
     if [ -f .env ]; then
         echo ".env already exists, skipping."
-        exit 0
+        exit 1
     fi
 
     if [ ! -f .env.example ]; then
